@@ -1,0 +1,30 @@
+﻿@page "/"
+@inherits MemberListBase
+
+<h3>Member List</h3>
+
+@{
+    if (Members==null)
+    {
+    <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <div class="card-deck">
+            @foreach (var member in Members)
+            {
+                <div class="card m-3" style="min-width: 18rem; max-width:30.5%;">
+                    <div class="card-header">
+                        <h3>@member.Name</h3>
+                    </div>
+                    <div>
+                        Designation:    <p>@member.Designation</p>
+                        Experience:    <p>@member.Experience</p>
+                        Fun Name :  <p>@member.FunName</p>
+                        Primay skills :  <p>@member.PrimarySkills</p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+}
