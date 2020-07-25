@@ -1,0 +1,35 @@
+﻿@page "/memberdetail/{id}"
+@inherits MemberDetailBase
+
+@{
+    if (TeamMember == null)
+    {
+        <div class="spinner"></div>
+    }
+    else
+    {
+        <div class="row justify-content-center m-3">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>@TeamMember.Name</h1>
+                    </div>
+
+                    <div class="card-body text-center">
+                        <h4>ID :@TeamMember.Id</h4>
+                        <h4>Designation :@TeamMember.Designation</h4>
+                        <h4>Experience :@TeamMember.Experience</h4>
+                        <h4>FunName :@TeamMember.FunName</h4>
+                        <h4>PrimarySkills :@TeamMember.PrimarySkills</h4>
+                        <h4>SecondarySkills :@TeamMember.SecondarySkills</h4>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="/" class="btn btn-primary">Back</a>
+                        <a href="#" class="btn btn-primary">Edit</a>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

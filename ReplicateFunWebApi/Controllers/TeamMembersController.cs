@@ -31,5 +31,19 @@ namespace FunApp.WebApI.Controllers
                     "Error retrieving data from the database");
             }
         }
+
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult> GetEmployee(int id)
+        {
+            try
+            {
+                return Ok(await _teamMemberRepository.GetTeamMember(id));
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error retrieving data from the database");
+            }
+        }
     }
 }

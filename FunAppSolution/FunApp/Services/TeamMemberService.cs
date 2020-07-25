@@ -17,17 +17,13 @@ namespace FunApp.Services
 
         public async Task<IEnumerable<TeamMember>> GetTeamMembers()
         {
-            //var team = new List<TeamMember>
-            //{
-            //    new TeamMember()
-            //    {
-            //        Id = 1,
-            //        Name = "Ashish"
-            //    }
-            //};
-            //return team;
-
             var result = await _httpClient.GetJsonAsync<TeamMember[]>("api/teammembers");
+            return result;
+        }
+
+        public async Task<TeamMember> GetTeamMember(int id)
+        {
+            var result = await _httpClient.GetJsonAsync<TeamMember>($"api/teammembers/{id}");
             return result;
         }
     }

@@ -7,5 +7,6 @@ namespace FunApp.Services
     public interface ITeamMemberService
     {
         Task<IEnumerable<TeamMember>> GetTeamMembers();
+        Task<TeamMember> GetTeamMember(int id);
     }
 }
