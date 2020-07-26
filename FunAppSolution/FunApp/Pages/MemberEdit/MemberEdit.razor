@@ -1,0 +1,45 @@
+﻿@page "/memberedit/{id}"
+@using FunApp.Common.Models
+@inherits MemberEditBase
+
+@{
+    if (TeamMember == null)
+    {
+        <div class="spinner"></div>
+    }
+    else
+    {
+
+        <EditForm Model="@TeamMember">
+            <h3>Edit Team Member</h3>
+            <hr />
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">
+                    Name
+                </label>
+                <div class="col-sm-10">
+                    <InputText id="name" class="form-control" placeholder="Name"
+                               @bind-Value="TeamMember.Name" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="designation" class="col-sm-2 col-form-label">
+                    Designation
+                </label>
+                <div class="col-sm-10">
+                    <InputText id="designation" class="form-control" placeholder="Designation"
+                               @bind-Value="TeamMember.Designation" />
+                </div>
+            </div>
+            @*<div class="form-group row">
+                <label for="experience" class="col-sm-2 col-form-label">
+                    Experience
+                </label>
+                <div class="col-sm-10">
+                    <InputText id="experience" class="form-control" placeholder="Experience"
+                               @bind-Value="TeamMember.Experience" />
+                </div>
+            </div*@
+        </EditForm>
+    }
+}

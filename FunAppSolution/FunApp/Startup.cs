@@ -33,7 +33,8 @@ namespace FunApp
             services.AddHttpClient<ITeamMemberService, TeamMemberService>(client=>
                 client.BaseAddress= new Uri("https://localhost:44342/")
             );
-           // services.AddTransient<ITeamMemberService, TeamMemberService>();
+            services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);
+            // services.AddTransient<ITeamMemberService, TeamMemberService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

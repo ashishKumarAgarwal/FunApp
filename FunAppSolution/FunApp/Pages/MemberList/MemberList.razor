@@ -1,8 +1,5 @@
 ﻿@page "/"
 @inherits MemberListBase
-
-<h3>Member List</h3>
-
 @{
     if (Members == null)
     {
@@ -10,7 +7,12 @@
     }
     else
     {
+        <div>
+            <iframe width="500" height="350" src="https://www.youtube.com/embed/dlCU2rCyUbs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <div class="card-deck">
+            <h3>Member List</h3>
+
             @foreach (var member in Members)
             {
                 <div class="card m-3" style="min-width: 18rem; max-width:30.5%;">
@@ -20,13 +22,16 @@
                     <div>
                         Designation:    <p>@member.Designation</p>
                         @*<div>
-                            <a href="/memberdetail/@member.Id" class="btn btn-primary">Details</a>
-                        </div>*@
+                                <a href="/memberdetail/@member.Id" class="btn btn-primary">Details</a>
+                            </div>*@
                         <a href="@($"memberdetail/{member.Id}")"
                            class="btn btn-primary m-1">View</a>
+                        <a href="@($"memberedit/{member.Id}")"
+                           class="btn btn-primary m-1">Edit</a>
                     </div>
                 </div>
             }
         </div>
+
     }
 }
