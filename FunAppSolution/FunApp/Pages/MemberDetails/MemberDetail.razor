@@ -8,29 +8,31 @@
     }
     else
     {
-        <div class="row justify-content-center m-3">
-            <div class="col-sm-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h1>@TeamMember.Name</h1>
-                    </div>
+        <div class="container-fluid bg-1 text-center">
+            <h3 class="margin">Who Am I?</h3>
+            <img src="" class="img-responsive img-circle margin" style="display:inline" alt="my image" width="350" height="350">
+            <h3>Replicator @TeamMember.Name aka @TeamMember.FunName</h3>
+            <h4>@TeamMember.Designation</h4>
+            <h4>Replicating since @TeamMember.Experience years</h4>
+        </div>
 
-                    <div class="card-body text-center">
-                        <h4>ID :@TeamMember.Id</h4>
-                        <h4>Designation :@TeamMember.Designation</h4>
-                        <h4>Experience :@TeamMember.Experience</h4>
-                        <h4>FunName :@TeamMember.FunName</h4>
-                        <h4>PrimarySkills :@TeamMember.PrimarySkills</h4>
-                        <h4>SecondarySkills :@TeamMember.SecondarySkills</h4>
-                    </div>
-                    <div class="card-footer text-center">
-                        <a href="/" class="btn btn-primary">Back</a>
-                        <a href="#" class="btn btn-primary">Edit</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
+        <div class="container-fluid bg-2 text-center">
+            <h3 class="margin">What are my skills ?</h3>
+            <h5>Primary : @TeamMember.PrimarySkills</h5>
+            <h5>Secondary : @TeamMember.SecondarySkills</h5>
+        </div>
+
+        <div class="container-fluid bg-3 text-center">
+            <h3 class="margin">Where To Find Me?</h3><br>
+            <div class="row">
+                <div class="col-sm-4">
+                    Facebook Link
+                </div>
+                <div class="col-sm-4">
+                    LinkedIn Link
                 </div>
             </div>
         </div>
-     
+
     }
 }

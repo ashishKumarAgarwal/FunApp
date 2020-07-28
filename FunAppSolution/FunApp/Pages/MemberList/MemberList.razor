@@ -9,26 +9,21 @@
     {
         <div class="container-fluid">
             <div class="card-deck">
-                
 
                 @foreach (var member in Members)
                 {
-                    <div class="card m-3" style="min-width: 18rem; max-width:30.5%;">
-                        <div class="card-header">
-                            <td><img class="rounded-circle" /></td>
-                            <h3>@member.Name</h3>
-                        </div>
-                        <div>
-                            Designation:    <p>@member.Designation</p>
-                            @*<div>
-                                    <a href="/memberdetail/@member.Id" class="btn btn-primary">Details</a>
-                                </div>*@
-                            <a href="@($"memberdetail/{member.Id}")"
-                               class="btn btn-primary m-1">View</a>
-                            <a href="@($"memberedit/{member.Id}")"
-                               class="btn btn-primary m-1">Edit</a>
+
+                    <div class="card border-success mb-3" style="max-width: 18rem;">
+                        <img class="card-img-top rounded" src="" alt="image">
+
+                        <div class="card-header">Header</div>
+                        <div class="card-body text-success">
+                            <h5 class="card-title">@member.Name</h5>
+                            <p class="card-text">@member.Designation</p>
+                            <a href="/memberdetail/@member.Id" class="btn btn-primary">Show details</a>
                         </div>
                     </div>
+
                 }
             </div>
         </div>
