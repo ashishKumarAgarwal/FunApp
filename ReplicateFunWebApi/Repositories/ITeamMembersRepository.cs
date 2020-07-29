@@ -10,6 +10,6 @@ namespace FunApp.WebApI.Repositories
         Task<TeamMember> GetTeamMember(int teamMemberId);
         Task<TeamMember> AddTeamMember(TeamMember teamMember);
         Task<TeamMember> UpdateTeamMember(TeamMember teamMember);
-        void DeleteTeamMember(int teamMemberId);
+        Task<TeamMember> DeleteTeamMember(int teamMemberId);
     }
 }

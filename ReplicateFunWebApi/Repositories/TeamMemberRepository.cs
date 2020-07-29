@@ -26,19 +26,48 @@ namespace FunApp.WebApI.Repositories
                 FirstOrDefaultAsync(tm => tm.Id == teamMemberId);
         }
 
-        public Task<TeamMember> AddTeamMember(TeamMember teamMember)
+        public async Task<TeamMember> AddTeamMember(TeamMember teamMember)
         {
-            throw new System.NotImplementedException();
+            var result = await _appDbContext.TeamMembers.AddAsync(teamMember);
+            await _appDbContext.SaveChangesAsync();
+            return result.Entity;
         }
 
-        public Task<TeamMember> UpdateTeamMember(TeamMember teamMember)
+        public async Task<TeamMember> UpdateTeamMember(TeamMember teamMember)
         {
-            throw new System.NotImplementedException();
+            var teamMemberInDb = await _appDbContext.TeamMembers
+                .FirstOrDefaultAsync(e => e.Id == teamMember.Id);
+
+            if (teamMemberInDb != null)
+            {
+                teamMemberInDb.Name = teamMember.Name;
+                teamMemberInDb.FunName = teamMember.FunName;
+                teamMemberInDb.Designation = teamMember.Designation;
+                teamMemberInDb.Experience = teamMember.Experience;
+                teamMemberInDb.PrimarySkills = teamMember.PrimarySkills;
+                teamMemberInDb.SecondarySkills = teamMember.SecondarySkills;
+                teamMemberInDb.imgUrl = teamMember.imgUrl;
+
+                await _appDbContext.SaveChangesAsync();
+
+                return teamMemberInDb;
+            }
+
+            return null;
         }
 
-        public void DeleteTeamMember(int teamMemberId)
+        public async Task<TeamMember> DeleteTeamMember(int teamMemberId)
         {
-            throw new System.NotImplementedException();
+            var teamMemberInDb = await _appDbContext.TeamMembers
+                .FirstOrDefaultAsync(e => e.Id == teamMemberId);
+            if (teamMemberInDb != null)
+            {
+                _appDbContext.TeamMembers.Remove(teamMemberInDb);
+                await _appDbContext.SaveChangesAsync();
+                return teamMemberInDb;
+            }
+
+            return null;
         }
     }
 }
