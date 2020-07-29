@@ -1,16 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using FunApp.Data;
+using FunApp.Services;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using FunApp.Data;
-using FunApp.Services;
+using System;
 
 namespace FunApp
 {
@@ -30,8 +25,8 @@ namespace FunApp
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
-            services.AddHttpClient<ITeamMemberService, TeamMemberService>(client=>
-                client.BaseAddress= new Uri("https://localhost:44342/")
+            services.AddHttpClient<ITeamMemberService, TeamMemberService>(client =>
+                client.BaseAddress = new Uri("https://localhost:44342/")
             );
             services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);
             // services.AddTransient<ITeamMemberService, TeamMemberService>();
