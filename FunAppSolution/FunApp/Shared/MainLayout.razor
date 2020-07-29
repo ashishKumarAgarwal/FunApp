@@ -1,6 +1,9 @@
-﻿@inherits LayoutComponentBase
-
+﻿@using Microsoft.AspNetCore.Identity
+@inherits LayoutComponentBase
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 <div class="sidebar">
+    @*LoggedIn user :  @UserManager.UpdateNormalizedUserNameAsync()!*@
     <NavMenu />
 </div>
 
