@@ -28,6 +28,8 @@ namespace FunApp
             services.AddHttpClient<ITeamMemberService, TeamMemberService>(client =>
                 client.BaseAddress = new Uri("https://localhost:44342/")
             );
+            services.AddAuthentication("Identity.Application")
+                .AddCookie();
             services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);
             // services.AddTransient<ITeamMemberService, TeamMemberService>();
         }
@@ -50,7 +52,8 @@ namespace FunApp
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapBlazorHub();
