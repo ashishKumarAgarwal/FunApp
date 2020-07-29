@@ -10,30 +10,66 @@
     {
         <a href="/membercreateedit/@TeamMember.Id" class="btn btn-primary">Edit details</a>
         <a href="/" class="btn btn-primary">Back</a>
-        <div class="container-fluid bg-1 text-center">
-            <h3 class="margin">Who Am I?</h3>
-            <img src="@TeamMember.imgUrl" class="rounded" style="display:inline" alt="my image" width="350" height="350">
-            <h3>Replicator @TeamMember.Name aka @TeamMember.FunName</h3>
-            <h4>@TeamMember.Designation</h4>
-            <h4>Replicating since @TeamMember.Experience years</h4>
+
+        <div class="container-fluid bg-1">
+            <h3 class="margin text-center">Who Am I?</h3><br>
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Like to be called</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="@TeamMember.imgUrl" class="rounded-circle" width="300" height="300" /></td>
+                        <td>@TeamMember.Id</td>
+                        <td>@TeamMember.Name</td>
+                        <td>@TeamMember.Designation</td>
+                        <td>@TeamMember.FunName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container-fluid bg-2">
+            <h3 class="margin text-center">My Technical interests?</h3><br>
+            <table class="table table-borderless">
+                <thead>
+                <tr>
+                    <th>Primary Skills</th>
+                    <th>Secondary Skills</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>@TeamMember.PrimarySkills</td>
+                    <td>@TeamMember.SecondarySkills</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
-        <div class="container-fluid bg-2 text-center">
-            <h3 class="margin">What are my skills ?</h3>
-            <h5>Primary : @TeamMember.PrimarySkills</h5>
-            <h5>Secondary : @TeamMember.SecondarySkills</h5>
-        </div>
-
-        <div class="container-fluid bg-3 text-center">
-            <h3 class="margin">Where To Find Me?</h3><br>
-            <div class="row">
-                <div class="col-sm-4">
-                    Facebook Link
-                </div>
-                <div class="col-sm-4">
-                    LinkedIn Link
-                </div>
-            </div>
+        <div class="container-fluid bg-3">
+            <h3 class="margin text-center">Where To Find Me?</h3><br>
+            <table class="table table-borderless">
+                <thead>
+                <tr>
+                    <th>Facebook</th>
+                    <th>Instagram</th>
+                    <th>LinkedIn</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
     }

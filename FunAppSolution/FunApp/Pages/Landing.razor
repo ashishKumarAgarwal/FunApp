@@ -1,9 +1,11 @@
 ﻿@page "/"
 @using FunApp.Pages.MemberList
-<p> Welcome to the new way of collaboration ,Login to see your teams details</p>
 
 <AuthorizeView>
     <Authorized>
         <MemberList></MemberList>
     </Authorized>
+    <NotAuthorized>
+        <p> Welcome to the new way of collaboration ,Login to see your teams details</p>
+    </NotAuthorized>
 </AuthorizeView>
