@@ -12,7 +12,7 @@ namespace FunApp.Common.Models
         public string FunName { get; set; }
         public string PrimarySkills { get; set; }
         public string SecondarySkills { get; set; }
-        public float Experience { get; set; }
+        public string Experience { get; set; }
         public string imgUrl { get; set; }
     }
 }
