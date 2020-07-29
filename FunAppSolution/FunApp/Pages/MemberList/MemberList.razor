@@ -7,27 +7,33 @@
     }
     else
     {
-        <div class="container-fluid">
-            <div class="card-deck">
-
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Primary skills</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
                 @foreach (var member in Members)
                 {
-
-                    <div class="card border-success mb-3" style="max-width: 18rem;">
-                        <img class="card-img-top rounded" src="@member.imgUrl" alt="image">
-
-                        <div class="card-header">Header</div>
-                        <div class="card-body text-success">
-                            <h5 class="card-title">@member.Name</h5>
-                            <p class="card-text">@member.Designation</p>
-                            <a href="/memberdetail/@member.Id" class="btn btn-primary">Show details</a>
-                        </div>
-                    </div>
-
+                    <tr>
+                        <td><img src="@member.imgUrl" class="rounded-circle" width="250" height="250" /></td>
+                        <td>@member.Name</td>
+                        <td>@member.Designation</td>
+                        <td>@member.PrimarySkills</td>
+                        <td>
+                            <a href="@($"memberdetail/{member.Id}")" class="btn btn-primary table-btn">
+                              Details
+                            </a>
+                        </td>
+                    </tr>
                 }
-            </div>
-            </div>
-        
+            </tbody>
+        </table>
 
     }
 }
