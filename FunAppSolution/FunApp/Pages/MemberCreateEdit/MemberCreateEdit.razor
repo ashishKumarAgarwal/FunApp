@@ -73,4 +73,13 @@
     </div>
 
     <button class="btn btn-primary" type="submit">Submit</button>
+    @{
+        var href = "/";
+        if (TeamMember.Id != 0)
+        {
+            href=$"/memberdetail/{@TeamMember.Id}";
+            
+        }
+        <a href="@href" class="btn btn-primary">Cancel</a>
+    }
 </EditForm>
