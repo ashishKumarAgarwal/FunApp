@@ -1,0 +1,67 @@
+﻿@page "/membercreateedit/{id}"
+@page "/membercreateedit"
+
+
+@inherits MemberCreateEditBase
+
+<h3>@PageHeaderText</h3>
+
+<EditForm Model="@TeamMember" OnValidSubmit="HandleValidSubmit">
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">
+            Name
+        </label>
+        <div class="col-sm-10">
+            <InputText id="firstName" class="form-control" placeholder="Name"
+                       @bind-Value="@TeamMember.Name" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="designation" class="col-sm-2 col-form-label">
+            Designation
+        </label>
+        <div class="col-sm-10">
+            <InputText id="designation" class="form-control" placeholder="Designation"
+                       @bind-Value="@TeamMember.Designation" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="funName" class="col-sm-2 col-form-label">
+            FunName
+        </label>
+        <div class="col-sm-10">
+            <InputText id="funName" class="form-control" placeholder="FunName"
+                       @bind-Value="@TeamMember.FunName" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="primarySkills" class="col-sm-2 col-form-label">
+            Primary Skills
+        </label>
+        <div class="col-sm-10">
+            <InputText id="primarySkills" class="form-control" placeholder="Primary Skills"
+                       @bind-Value="@TeamMember.PrimarySkills" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="secondarySkills" class="col-sm-2 col-form-label">
+            Secondary Skills
+        </label>
+        <div class="col-sm-10">
+            <InputText id="secondarySkills" class="form-control" placeholder="Secondary Skills"
+                       @bind-Value="@TeamMember.SecondarySkills" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="imgurl" class="col-sm-2 col-form-label">
+            Image Url
+        </label>
+        <div class="col-sm-10">
+            <InputText id="imgurl" class="form-control" placeholder="Img url"
+                       @bind-Value="@TeamMember.imgUrl" />
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+</EditForm>
