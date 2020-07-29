@@ -8,11 +8,11 @@ namespace FunApp.Common.Models
 
         [Key]
         public int Id { get; set; }
-
         public string Designation { get; set; }
         public string FunName { get; set; }
         public string PrimarySkills { get; set; }
         public string SecondarySkills { get; set; }
         public float Experience { get; set; }
+        public string imgUrl { get; set; }
     }
 }
