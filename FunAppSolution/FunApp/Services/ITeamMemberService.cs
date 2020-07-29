@@ -8,5 +8,8 @@ namespace FunApp.Services
     {
         Task<IEnumerable<TeamMember>> GetTeamMembers();
         Task<TeamMember> GetTeamMember(int id);
+        Task<TeamMember> UpdateTeamMember(TeamMember teamMember);
+        Task<TeamMember> CreateTeamMember(TeamMember teamMember);
+        Task DeleteTeamMember(int id);
     }
 }
