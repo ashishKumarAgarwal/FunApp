@@ -47,6 +47,11 @@ namespace FunApp.WebApI.Repositories
                 teamMemberInDb.PrimarySkills = teamMember.PrimarySkills;
                 teamMemberInDb.SecondarySkills = teamMember.SecondarySkills;
                 teamMemberInDb.imgUrl = teamMember.imgUrl;
+                teamMemberInDb.Birthday = teamMember.Birthday;
+                teamMemberInDb.HappinessIndex = teamMember.HappinessIndex;
+                teamMemberInDb.Hobbies = teamMember.Hobbies;
+                teamMemberInDb.InterestedTechnologies = teamMember.InterestedTechnologies;
+                teamMemberInDb.JoinedOn = teamMember.JoinedOn;
 
                 await _appDbContext.SaveChangesAsync();
 

@@ -20,7 +20,8 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Designation</th>
-                        <th>Like to be called</th>
+                        <th>Experience</th>
+                        <th>Referred As</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,7 @@
                         <td>@TeamMember.Id</td>
                         <td>@TeamMember.Name</td>
                         <td>@TeamMember.Designation</td>
+                        <td>@TeamMember.Experience</td>
                         <td>@TeamMember.FunName</td>
                     </tr>
                 </tbody>
@@ -41,12 +43,16 @@
                 <tr>
                     <th>Primary Skills</th>
                     <th>Secondary Skills</th>
+                    <th>Interested to work on</th>
+                    <th>Happiness Index</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td>@TeamMember.PrimarySkills</td>
                     <td>@TeamMember.SecondarySkills</td>
+                    <td>@TeamMember.InterestedTechnologies</td>
+                    <td>@TeamMember.HappinessIndex</td>
                 </tr>
                 </tbody>
             </table>
@@ -57,17 +63,12 @@
             <table class="table table-borderless">
                 <thead>
                 <tr>
-                    <th>Facebook</th>
-                    <th>Instagram</th>
-                    <th>LinkedIn</th>
+                    <th><a href="@TeamMember.FacebookLink" class="oi-account-login">Facebook</a></th>
+                    <th><a href="@TeamMember.InstagramLink" class="oi-account-login">Instagram</a></th>
+                    <th><a href="@TeamMember.LinkedInLink" class="oi-account-login">LinkedIn</a></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
                 </tbody>
             </table>
         </div>

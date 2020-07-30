@@ -19,5 +19,8 @@ namespace FunApp.Common.Models
         public string Hobbies { get; set; }
         public string Birthday { get; set; }
         public string JoinedOn { get; set; }
+        public string FacebookLink { get; set; }
+        public string InstagramLink { get; set; }
+        public string LinkedInLink { get; set; }
     }
 }
