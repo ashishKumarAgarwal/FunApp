@@ -14,5 +14,10 @@ namespace FunApp.Common.Models
         public string SecondarySkills { get; set; }
         public string Experience { get; set; }
         public string imgUrl { get; set; }
+        public string InterestedTechnologies { get; set; }
+        public string HappinessIndex { get; set; }
+        public string Hobbies { get; set; }
+        public string Birthday { get; set; }
+        public string JoinedOn { get; set; }
     }
 }
