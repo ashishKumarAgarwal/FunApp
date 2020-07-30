@@ -9,26 +9,28 @@
     <ul class="nav flex-column">
         <AuthorizeView>
             <Authorized>
-                <li class="nav-item px-3">
+                <li class="nav-item ">
                     <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
                         <span class="oi oi-home" aria-hidden="true"></span> Home
                     </NavLink>
-
+                    </li>
+                <li class="nav-item ">
                     <NavLink class="nav-link" href="/identity/account/logout" Match="NavLinkMatch.All">
-                        <span class="oi oi-power-standby" aria-hidden="true"></span> Logout
+                        <span class="oi oi-power-standby" aria-hidden="true"></span>Logout(@context.User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name")?.Value)
                     </NavLink>
                 </li>
-                <li class="nav-item px-3">
+
+                <li class="nav-item ">
                     <NavLink class="nav-link" href="/projectdetails" Match="NavLinkMatch.All">
                         <span class="oi oi-badge" aria-hidden="true"></span> Project Details
                     </NavLink>
                 </li>
-                <li class="nav-item px-3">
+                <li class="nav-item ">
                     <NavLink class="nav-link" href="/appreciate" Match="NavLinkMatch.All">
                         <span class="oi oi-audio" aria-hidden="true"></span> Recognize
                     </NavLink>
-                </li> 
-                <li class="nav-item px-3">
+                </li>
+                <li class="nav-item ">
                     <NavLink class="nav-link" href="/membercreateedit" Match="NavLinkMatch.All">
                         <span class="oi oi-plus" aria-hidden="true"></span> Add Team member
                     </NavLink>

@@ -1,6 +1,6 @@
 ﻿@page "/memberdetail/{id}"
 @inherits MemberDetailBase
-
+@attribute [Authorize]
 @{
     if (TeamMember == null)
     {

@@ -1,13 +1,21 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inherits LayoutComponentBase
-@inject SignInManager<IdentityUser> SignInManager
+@*@inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@inject AuthenticationState AuthState*@
 <div class="sidebar">
-    @*LoggedIn user :  @UserManager.UpdateNormalizedUserNameAsync()!*@
     <NavMenu />
 </div>
 
 <div class="main">
+    @*<nav class="navbar navbar-expand-lg navbar-light border-bottom">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <h4>
+                LoggedIn as : @AuthState.User.Claims.FirstOrDefault(c => c.Type
+                                                          == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name")?.Value
+            </h4>
+        </div>
+    </nav>*@
     <div class="content px-4">
         @Body
     </div>

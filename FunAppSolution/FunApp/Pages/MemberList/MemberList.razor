@@ -1,5 +1,6 @@
 ﻿@page "/memberlist"
 @inherits MemberListBase
+@attribute [Authorize]
 @{
     if (Members == null)
     {
