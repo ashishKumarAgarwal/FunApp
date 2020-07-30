@@ -22,5 +22,7 @@ namespace FunApp.Common.Models
         public string FacebookLink { get; set; }
         public string InstagramLink { get; set; }
         public string LinkedInLink { get; set; }
+        public string GoodPoints { get; set; }
+        public string AreaOfImprovement { get; set; }
     }
 }

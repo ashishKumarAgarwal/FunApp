@@ -8,8 +8,10 @@
     }
     else
     {
-        <a href="/membercreateedit/@TeamMember.Id" class="btn btn-primary">Edit details</a>
-        <a href="/" class="btn btn-primary">Back</a>
+        <a href="/membercreateedit/@TeamMember.Id" class="btn btn-primary sticky-top">Edit details</a>
+        <a href="/" class="btn btn-primary sticky-top">Back</a>
+
+        <h3>Member Details</h3>
 
         <div class="container-fluid bg-1">
             <h3 class="margin text-center">Who Am I?</h3><br>
@@ -40,61 +42,63 @@
             <h3 class="margin text-center">My Technical interests?</h3><br>
             <table class="table table-borderless">
                 <thead>
-                <tr>
-                    <th>Primary Skills</th>
-                    <th>Secondary Skills</th>
-                    <th>Interested to work on</th>
-                    <th>Happiness Index</th>
-                </tr>
+                    <tr>
+                        <th>Primary Skills</th>
+                        <th>Secondary Skills</th>
+                        <th>Interested to work on</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>@TeamMember.PrimarySkills</td>
-                    <td>@TeamMember.SecondarySkills</td>
-                    <td>@TeamMember.InterestedTechnologies</td>
-                    <td>@TeamMember.HappinessIndex</td>
-                </tr>
+                    <tr>
+                        <td>@TeamMember.PrimarySkills</td>
+                        <td>@TeamMember.SecondarySkills</td>
+                        <td>@TeamMember.InterestedTechnologies</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-        <div class="container-fluid bg-3">
+        <div class="container-fluid bg-1">
             <h3 class="margin text-center">When I am not working ?</h3><br>
             <table class="table table-borderless">
                 <thead>
-                <tr>
-                    <th>Hobbies</th>
-                </tr>
+                    <tr>
+                        <th>Hobbies</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>@TeamMember.Hobbies</td>
-                </tr>
+                    <tr>
+                        <td>@TeamMember.Hobbies</td>
+                    </tr>
                 </tbody>
             </table>
-        </div><div class="container-fluid bg-1">
+        </div><div class="container-fluid bg-2">
             <h3 class="margin text-center">How was my previous sprint ?</h3><br>
             <table class="table table-borderless">
                 <thead>
-                <tr>
-                    <th>Happiness Index</th>
-                </tr>
+                    <tr>
+                        <th>Happiness Index</th>
+                        <th>Things went well</th>
+                        <th>Improvement points</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>@TeamMember.HappinessIndex</td>
-                </tr>
+                    <tr>
+                        <td>@TeamMember.HappinessIndex</td>
+                        <td>@TeamMember.GoodPoints</td>
+                        <td>@TeamMember.AreaOfImprovement</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-        <div class="container-fluid bg-5">
+        <div class="container-fluid bg-1">
             <h3 class="margin text-center">Where To Find Me?</h3><br>
             <table class="table table-borderless">
                 <thead>
-                <tr>
-                    <th><a href="@TeamMember.FacebookLink" class="oi-account-login">Facebook</a></th>
-                    <th><a href="@TeamMember.InstagramLink" class="oi-account-login">Instagram</a></th>
-                    <th><a href="@TeamMember.LinkedInLink" class="oi-account-login">LinkedIn</a></th>
-                </tr>
+                    <tr>
+                        <th><a href="@TeamMember.FacebookLink" target="popup" class="oi-account-login">Facebook</a></th>
+                        <th><a href="@TeamMember.InstagramLink" target="popup" class="oi-account-login">Instagram</a></th>
+                        <th><a href="@TeamMember.LinkedInLink" target="popup" class="oi-account-login">LinkedIn</a></th>
+                    </tr>
                 </thead>
                 <tbody>
                 </tbody>
