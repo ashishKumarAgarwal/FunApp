@@ -1,0 +1,18 @@
+﻿@page "/projectdetails/projectdocuments"
+@inherits ProjectDetailsBase
+<h3>Project Details</h3>
+
+@{
+                @foreach (var doc in _projectDetail.DocumentList.DocumentNameWithLink)
+                {
+<tr>
+    <td>@doc.Key</td>
+    <td>
+        <div>
+            <iframe width="300" height="200" src="@doc.Value" allowfullscreen style="border:none;"></iframe>
+        </div>
+    </td>
+</tr>
+                              }
+}
+

@@ -1,0 +1,24 @@
+﻿@page "/projectdetails/projectvideos"
+@inherits ProjectDetailsBase
+<h3 class="container-fluid bg-4">Project Related Videos</h3>
+<div class="container-fluid bg-2">
+
+    @{
+                    @foreach (var video in _projectDetail.VideoList.VideoNameWithLink)
+                    {
+        <table class="table" cellpadding="10">
+            <thead>
+                <tr>
+
+                    <th><iframe width="300" height="200" src="@video.Value" allowfullscreen style="border:none;"></iframe><br />@video.Key</th>
+                    <th>
+                        <textarea id="" name="" rows="2" cols="35">Comment..</textarea>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                    </th>
+
+                </tr></thead></table>
+                }
+                }
+    </div>
+
