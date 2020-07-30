@@ -9,16 +9,6 @@ namespace FunApp.Pages.ProjectDetails
 {
     public class ProjectDetailsBase : ComponentBase
     {
-        [Inject]
-        public ITeamMemberService TeamMemberService { get; set; }
-
-        public IEnumerable<TeamMember> Members { get; set; }
-        public ProjectDetailList _projectDetail;
-
-        protected override async Task OnInitializedAsync()
-        {
-            Members = (await TeamMemberService.GetTeamMembers()).ToList();
-            _projectDetail = new ProjectDetailList();
-        }
+       
     }
 }

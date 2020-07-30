@@ -2,13 +2,13 @@
 
 namespace FunApp.Common.Models
 {
-    public class Video
+    public class Document
     {
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Value { get; set; }
         public string Type { get; set; }
-        public string RelatedArea { get; set; }
+        public SubjectArea RelatedArea { get; set; }
     }
 }
