@@ -1,20 +1,28 @@
-﻿<h3>Retrospection</h3>
-@using FunApp.Common.Models
-@inherits RetrospectionBase
+﻿@using FunApp.Common.Models
+@inherits RetrospectionEditBase
 
-<table class="table table-borderless">
-    <thead>
-        <tr>
-            <th>Happiness Index</th>
-            <th>Things went well</th>
-            <th>Improvement points</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>  <InputText @bind-Value="@Retrospection.HappinessIndex" /></td>
-            <td>  <InputText @bind-Value="@Retrospection.Wentwell" /></td>
-            <td>  <InputText @bind-Value="@Retrospection.AreaOfImprovement" /></td>
-        </tr>
-    </tbody>
-</table>
+@if (Retrospection == null)
+{
+    <p>No record found</p>
+}
+else
+{
+    <EditForm Model="@Retrospection" OnValidSubmit="HandleValidSubmit">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>Happiness Index</th>
+                    <th>Things went well</th>
+                    <th>Improvement points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>  <InputText class="form-control" @bind-Value="@Retrospection.HappinessIndex" /></td>
+                    <td>  <InputTextArea class="form-control" @bind-Value="@Retrospection.Wentwell" /></td>
+                    <td>  <InputTextArea  class="form-control" @bind-Value="@Retrospection.AreaOfImprovement" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </EditForm>
+}

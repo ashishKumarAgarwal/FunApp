@@ -24,7 +24,7 @@ namespace FunApp.Pages.MemberCreateEdit
         [Parameter]
         public string Id { get; set; }
 
-        protected async override Task OnInitializedAsync()
+        protected override async Task OnInitializedAsync()
         {
             int.TryParse(Id, out int employeeId);
 

@@ -40,7 +40,13 @@ namespace FunApp.WebApI.Controllers
         {
             try
             {
-                return Ok(await _retrospectionRepository.GetRetrospection(id));
+                var retrospection = await _retrospectionRepository.GetRetrospection(id);
+                if (retrospection == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(retrospection);
             }
             catch (Exception)
             {

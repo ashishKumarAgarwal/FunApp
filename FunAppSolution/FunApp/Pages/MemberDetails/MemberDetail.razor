@@ -9,7 +9,6 @@
     }
     else
     {
-        <a href="/membercreateedit/@TeamMember.TeamMemberId" class="btn btn-primary sticky-top">Edit details</a>
         <a href="/" class="btn btn-primary sticky-top">Back</a>
 
         <h3>Member Details</h3>
@@ -73,8 +72,18 @@
                 </tbody>
             </table>
         </div><div class="container-fluid bg-2">
+                  <button class="btn btn-primary float-right" @onclick="ToggleEdit">
+                           @EditSaveButtonName 
+                          </button>
             <h3 class="margin text-center">How was my previous sprint ?</h3><br>
-            <RetrospectionDetails></RetrospectionDetails>
+            @if (IsEditMode)
+            {
+                <RetrospectionEdit OnSave="Saved" @ref="retrospectionEditBase" MemberId="@TeamMember.TeamMemberId"></RetrospectionEdit>
+            }
+            else
+            {
+                <RetrospectionDetails  MemberId="@TeamMember.TeamMemberId"></RetrospectionDetails>
+            }
         </div>
         <div class="container-fluid bg-1">
             <h3 class="margin text-center">Where To Find Me?</h3><br>
@@ -90,7 +99,6 @@
                 </tbody>
             </table>
         </div>
-
 
     }
 }

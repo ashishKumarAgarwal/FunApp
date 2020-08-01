@@ -17,6 +17,7 @@
                     <th>Name</th>
                     <th>Designation</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,11 @@
                         <td>
                             <a href="@($"memberdetail/{member.TeamMemberId}")" class="btn btn-primary table-btn">
                                 Details
+                            </a>
+                        </td>
+                        <td>
+                            <a href="@($"membercreateedit/{member.TeamMemberId}")" class="btn btn-primary table-btn">
+                                Edit
                             </a>
                         </td>
                     </tr>

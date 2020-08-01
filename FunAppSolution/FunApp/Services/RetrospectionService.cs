@@ -1,5 +1,6 @@
 ﻿using FunApp.Common.Models;
 using Microsoft.AspNetCore.Components;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -13,6 +14,11 @@ namespace FunApp.Services
         public RetrospectionService(HttpClient httpClient)
         {
             _httpClient = httpClient;
+        }
+
+        public async Task<IEnumerable<Retrospection>> GetRetrospection()
+        {
+            return await _httpClient.GetJsonAsync<IEnumerable<Retrospection>>(BaseApi);
         }
 
         public async Task<Retrospection> UpdateRetrospection(Retrospection retrospection)
