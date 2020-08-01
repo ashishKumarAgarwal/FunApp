@@ -6,9 +6,14 @@ namespace FunApp.Common.Models
     {
         [Key]
         public int Id { get; set; }
+        //Title
         public string Name { get; set; }
+        //Link
         public string Value { get; set; }
+        //Demo,Architecture,tutoril
         public string Type { get; set; }
-        public string RelatedArea { get; set; }
+        //Snowfalke,Rundeck,etc
+        public SubjectArea SubjectArea { get; set; }
+        public int SubjectAreaId { get; set; }
     }
 }

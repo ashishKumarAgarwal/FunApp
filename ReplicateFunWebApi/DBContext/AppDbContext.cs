@@ -11,6 +11,9 @@ namespace FunApp.WebApI.DBContext
 
         public DbSet<TeamMember> TeamMembers { get; set; }
         public DbSet<Retrospection> Retrospection { get; set; }
+        public DbSet<Video> Videos { get; set; }
+        public DbSet<Document> Documents { get; set; }
+        public DbSet<SubjectArea> SubjectAreas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
