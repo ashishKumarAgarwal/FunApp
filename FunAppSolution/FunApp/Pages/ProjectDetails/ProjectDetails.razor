@@ -1,5 +1,6 @@
 ﻿@page "/projectdetails"
 @inherits ProjectDetailsBase
+@using FunApp.Pages.Tabs
 
     @*<tr>
         <td>
@@ -14,4 +15,14 @@
             </a>
         </td>
     </tr>*@
-Tabs for different subject areas
+<h3>Subject Areas in the project </h3> <br>
+<TabControl>
+    <ChildContent>
+        <TabPage Text="Snowflake">
+            <Snowflake />
+        </TabPage>
+        <TabPage Text="Rundeck">
+            <Rundeck />
+        </TabPage>
+    </ChildContent>
+</TabControl>
