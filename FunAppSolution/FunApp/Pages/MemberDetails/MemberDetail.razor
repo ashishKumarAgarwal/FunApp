@@ -1,6 +1,7 @@
 ﻿@page "/memberdetail/{id}"
 @inherits MemberDetailBase
 @attribute [Authorize]
+@using FunApp.Pages.Retrospection
 @{
     if (TeamMember == null)
     {
@@ -8,7 +9,7 @@
     }
     else
     {
-        <a href="/membercreateedit/@TeamMember.Id" class="btn btn-primary sticky-top">Edit details</a>
+        <a href="/membercreateedit/@TeamMember.TeamMemberId" class="btn btn-primary sticky-top">Edit details</a>
         <a href="/" class="btn btn-primary sticky-top">Back</a>
 
         <h3>Member Details</h3>
@@ -29,7 +30,7 @@
                 <tbody>
                     <tr>
                         <td><img src="@TeamMember.imgUrl" class="rounded-circle" width="300" height="300" /></td>
-                        <td>@TeamMember.Id</td>
+                        <td>@TeamMember.TeamMemberId</td>
                         <td>@TeamMember.Name</td>
                         <td>@TeamMember.Designation</td>
                         <td>@TeamMember.Experience</td>
@@ -73,22 +74,7 @@
             </table>
         </div><div class="container-fluid bg-2">
             <h3 class="margin text-center">How was my previous sprint ?</h3><br>
-            <table class="table table-borderless">
-                <thead>
-                    <tr>
-                        <th>Happiness Index</th>
-                        <th>Things went well</th>
-                        <th>Improvement points</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>@TeamMember.HappinessIndex</td>
-                        <td>@TeamMember.GoodPoints</td>
-                        <td>@TeamMember.AreaOfImprovement</td>
-                    </tr>
-                </tbody>
-            </table>
+            <RetrospectionDetails></RetrospectionDetails>
         </div>
         <div class="container-fluid bg-1">
             <h3 class="margin text-center">Where To Find Me?</h3><br>

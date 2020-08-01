@@ -1,0 +1,27 @@
+﻿@using FunApp.Common.Models
+@inherits RetrospectionBase
+
+@if(Retrospection==null)
+{
+
+}
+else
+{
+    <table class="table table-borderless">
+        <thead>
+        <tr>
+            <th>Happiness Index</th>
+            <th>Things went well</th>
+            <th>Improvement points</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>@Retrospection.HappinessIndex</td>
+            <td>@Retrospection.Wentwell</td>
+            <td>@Retrospection.AreaOfImprovement</td>
+        </tr>
+        </tbody>
+    </table>
+}
+

@@ -44,7 +44,7 @@ namespace FunApp.Pages.MemberCreateEdit
         {
             TeamMember result = null;
 
-            if (TeamMember.Id != 0)
+            if (TeamMember.TeamMemberId != 0)
             {
                 result = await TeamMemberService.UpdateTeamMember(TeamMember);
             }

@@ -36,6 +36,7 @@ namespace FunApp.WebApI
             services.AddControllers();
             services.AddControllers();
             services.AddTransient<ITeamMembersRepository, TeamMemberRepository>();
+            services.AddTransient<IRetrospectionRepository, RetrospectionRepository>();
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DBConnection")));
             services.AddCors(c =>

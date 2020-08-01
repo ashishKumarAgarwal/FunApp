@@ -23,7 +23,7 @@ namespace FunApp.WebApI.Repositories
         public async Task<TeamMember> GetTeamMember(int teamMemberId)
         {
             return await _appDbContext.TeamMembers.
-                FirstOrDefaultAsync(tm => tm.Id == teamMemberId);
+                FirstOrDefaultAsync(tm => tm.TeamMemberId == teamMemberId);
         }
 
         public async Task<TeamMember> AddTeamMember(TeamMember teamMember)
@@ -36,7 +36,7 @@ namespace FunApp.WebApI.Repositories
         public async Task<TeamMember> UpdateTeamMember(TeamMember teamMember)
         {
             var teamMemberInDb = await _appDbContext.TeamMembers
-                .FirstOrDefaultAsync(e => e.Id == teamMember.Id);
+                .FirstOrDefaultAsync(e => e.TeamMemberId == teamMember.TeamMemberId);
 
             if (teamMemberInDb != null)
             {
@@ -48,7 +48,6 @@ namespace FunApp.WebApI.Repositories
                 teamMemberInDb.SecondarySkills = teamMember.SecondarySkills;
                 teamMemberInDb.imgUrl = teamMember.imgUrl;
                 teamMemberInDb.Birthday = teamMember.Birthday;
-                teamMemberInDb.HappinessIndex = teamMember.HappinessIndex;
                 teamMemberInDb.Hobbies = teamMember.Hobbies;
                 teamMemberInDb.InterestedTechnologies = teamMember.InterestedTechnologies;
                 teamMemberInDb.JoinedOn = teamMember.JoinedOn;
@@ -64,7 +63,7 @@ namespace FunApp.WebApI.Repositories
         public async Task<TeamMember> DeleteTeamMember(int teamMemberId)
         {
             var teamMemberInDb = await _appDbContext.TeamMembers
-                .FirstOrDefaultAsync(e => e.Id == teamMemberId);
+                .FirstOrDefaultAsync(e => e.TeamMemberId == teamMemberId);
             if (teamMemberInDb != null)
             {
                 _appDbContext.TeamMembers.Remove(teamMemberInDb);

@@ -75,9 +75,9 @@
     <button class="btn btn-primary" type="submit">Submit</button>
     @{
         var href = "/";
-        if (TeamMember.Id != 0)
+        if (TeamMember.TeamMemberId != 0)
         {
-            href=$"/memberdetail/{@TeamMember.Id}";
+            href=$"/memberdetail/{@TeamMember.TeamMemberId}";
             
         }
         <a href="@href" class="btn btn-primary">Cancel</a>

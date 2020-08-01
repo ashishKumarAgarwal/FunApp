@@ -10,13 +10,14 @@ namespace FunApp.WebApI.DBContext
         }
 
         public DbSet<TeamMember> TeamMembers { get; set; }
+        public DbSet<Retrospection> Retrospection { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             //seed categories
-            modelBuilder.Entity<TeamMember>().HasData(new TeamMember { Id = 1, Name = "Ashish" });
+            modelBuilder.Entity<TeamMember>().HasData(new TeamMember { TeamMemberId = 1, Name = "Ashish" });
         }
     }
 }

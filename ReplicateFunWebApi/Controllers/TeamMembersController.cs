@@ -59,7 +59,7 @@ namespace FunApp.WebApI.Controllers
 
                 var createdTeamMember = await _teamMemberRepository.AddTeamMember(teamMember);
 
-                return CreatedAtAction(nameof(GetTeamMember), new { id = createdTeamMember.Id },
+                return CreatedAtAction(nameof(GetTeamMember), new { id = createdTeamMember.TeamMemberId },
                     createdTeamMember);
             }
             catch (Exception)
@@ -74,11 +74,11 @@ namespace FunApp.WebApI.Controllers
         {
             try
             {
-                var teamMemberToUpdate = await _teamMemberRepository.GetTeamMember(teamMember.Id);
+                var teamMemberToUpdate = await _teamMemberRepository.GetTeamMember(teamMember.TeamMemberId);
 
                 if (teamMemberToUpdate == null)
                 {
-                    return NotFound($"Team member with Id = {teamMember.Id} not found");
+                    return NotFound($"Team member with Id = {teamMember.TeamMemberId} not found");
                 }
 
                 return await _teamMemberRepository.UpdateTeamMember(teamMember);

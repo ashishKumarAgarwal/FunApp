@@ -1,0 +1,20 @@
+﻿<h3>Retrospection</h3>
+@using FunApp.Common.Models
+@inherits RetrospectionBase
+
+<table class="table table-borderless">
+    <thead>
+        <tr>
+            <th>Happiness Index</th>
+            <th>Things went well</th>
+            <th>Improvement points</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>  <InputText @bind-Value="@Retrospection.HappinessIndex" /></td>
+            <td>  <InputText @bind-Value="@Retrospection.Wentwell" /></td>
+            <td>  <InputText @bind-Value="@Retrospection.AreaOfImprovement" /></td>
+        </tr>
+    </tbody>
+</table>

@@ -28,6 +28,9 @@ namespace FunApp
             services.AddHttpClient<ITeamMemberService, TeamMemberService>(client =>
                 client.BaseAddress = new Uri("https://localhost:44342/")
             );
+            services.AddHttpClient<IRetrospectionService, RetrospectionService>(client =>
+                client.BaseAddress = new Uri("https://localhost:44342/")
+            );
             services.AddAuthentication("Identity.Application")
                 .AddCookie();
             services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);
