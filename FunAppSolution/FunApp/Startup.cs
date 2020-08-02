@@ -37,6 +37,9 @@ namespace FunApp
             services.AddHttpClient<IVideoService, VideoService>(client =>
                 client.BaseAddress = new Uri("https://localhost:44342/")
             );
+            services.AddHttpClient<ISubjectAreaService, SubjectAreaService>(client =>
+                client.BaseAddress = new Uri("https://localhost:44342/")
+            );
             services.AddAuthentication("Identity.Application")
                 .AddCookie();
             services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);

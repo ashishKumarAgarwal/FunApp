@@ -1,16 +1,36 @@
 ﻿@page "/projectdetails"
-@inherits ProjectDetailsBase
 @using FunApp.Pages.Tabs
+@using FunApp.Common.Models
+@using FunApp.Services
+@inherits ProjectDetailsBase
+@inject ISubjectAreaService SubjectAreaService
 
 <h4>Project Details </h4>
 <br>
+
+
 <TabControl>
     <ChildContent>
-        <TabPage Text="Snowflake">
-            <Snowflake />
-        </TabPage>
-        <TabPage Text="Rundeck">
-            <Rundeck />
-        </TabPage>
+        @{ @foreach (var subjectArea in SubjectAreas)
+            {
+                <TabPage Text="@subjectArea.Name.ToString()">
+                    <ProjectDetailsTypes SubjectAreaId="@subjectArea.SubjectAreaId" />
+                </TabPage>
+            }
+        }
     </ChildContent>
 </TabControl>
+
+@code
+{
+
+
+
+    IEnumerable<SubjectArea> SubjectAreas { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        SubjectAreas = (await SubjectAreaService.GetSubjectAreas());
+    }
+
+}

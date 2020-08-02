@@ -1,0 +1,29 @@
+﻿@using FunApp.Pages.Tabs
+@using FunApp.Pages.ProjectDetails.Child_Pages;
+
+    
+    <br>    
+    <TabControl>
+        <ChildContent>
+
+            <TabPage Text="Video">
+                <Videos SubjectAreaId="@SubjectAreaId" />
+            </TabPage>
+
+            <TabPage Text="Document">
+                <Documents SubjectAreaId="@SubjectAreaId" />
+            </TabPage>
+
+
+        </ChildContent>
+    </TabControl>
+
+    @code
+{
+
+
+        [Parameter]
+        public int SubjectAreaId { get; set; }
+
+
+    }
