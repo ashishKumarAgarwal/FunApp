@@ -10,8 +10,9 @@
     else
     {
         <a href="/" class="btn btn-primary sticky-top">Back</a>
+        <h4 style="font-weight: bold;text-align: center">Member Details </h4>
+        
 
-        <h3>Member Details</h3>
 
         <div class="container-fluid bg-1">
             <h3 class="margin text-center">Who Am I?</h3><br>
@@ -70,9 +71,9 @@
                 </tbody>
             </table>
         </div><div class="container-fluid bg-2">
-                  <button class="btn btn-primary float-right" @onclick="ToggleEdit">
-                           @EditSaveButtonName 
-                          </button>
+            <button class="btn btn-primary float-right" @onclick="ToggleEdit">
+                @EditSaveButtonName
+            </button>
             <h3 class="margin text-center">How was my previous sprint ?</h3><br>
             @if (IsEditMode)
             {
@@ -80,7 +81,7 @@
             }
             else
             {
-                <RetrospectionDetails  MemberId="@TeamMember.TeamMemberId"></RetrospectionDetails>
+                <RetrospectionDetails MemberId="@TeamMember.TeamMemberId"></RetrospectionDetails>
             }
         </div>
         <div class="container-fluid bg-1">
