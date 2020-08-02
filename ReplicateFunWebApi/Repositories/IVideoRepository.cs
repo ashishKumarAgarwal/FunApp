@@ -8,7 +8,7 @@ namespace FunApp.WebApI.Repositories
     {
         Task<Video> GetVideo(int Id);
         Task<Video> AddVideo(Video video);
-        Task<Video> GetGetVideoBySubjectArea(int subjectAreaId);
+        Task<IEnumerable<Video>> GetGetVideoBySubjectArea(int sujectAreaId);
         Task<Video> UpdateVideo(Video video);
         Task<IEnumerable<Video>> GetVideos();
     }

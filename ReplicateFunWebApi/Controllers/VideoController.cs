@@ -35,32 +35,32 @@ namespace FunApp.WebApI.Controllers
         }
 
 
+        //[HttpGet("{id:int}")]
+        //public async Task<ActionResult> GetVideo(int id)
+        //{
+        //    try
+        //    {
+        //        var video = await _videoRepository.GetVideo(id);
+        //        if (video == null)
+        //        {
+        //            return NotFound();
+        //        }
+
+        //        return Ok(video);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return StatusCode(StatusCodes.Status500InternalServerError,
+        //            "Error retrieving data from the database");
+        //    }
+        //}
+
         [HttpGet("{id:int}")]
-        public async Task<ActionResult> GetVideo(int id)
+        public async Task<ActionResult> GetVideoBySubjectArea(int id)
         {
             try
             {
-                var video = await _videoRepository.GetVideo(id);
-                if (video == null)
-                {
-                    return NotFound();
-                }
-
-                return Ok(video);
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                    "Error retrieving data from the database");
-            }
-        }
-
-        [HttpGet("{subjectAreaId:int}")]
-        public async Task<ActionResult> GetVideoBySubjectArea(int subjectAreaId)
-        {
-            try
-            {
-                var video = await _videoRepository.GetGetVideoBySubjectArea(subjectAreaId);
+                var video = await _videoRepository.GetGetVideoBySubjectArea(id);
                 if (video == null)
                 {
                     return NotFound();

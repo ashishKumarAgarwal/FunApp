@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using FunApp.Common.Models;
 using FunApp.WebApI.DBContext;
 using Microsoft.EntityFrameworkCore;
@@ -51,9 +52,9 @@ namespace FunApp.WebApI.Repositories
             return await _appDbContext.Videos.FirstOrDefaultAsync(vid => vid.Id == Id);
         }
 
-        public async Task<Video> GetGetVideoBySubjectArea(int sujectAreaId)
+        public async Task<IEnumerable<Video>> GetGetVideoBySubjectArea(int sujectAreaId)
         {
-            return await _appDbContext.Videos.FirstOrDefaultAsync(vid => vid.SubjectAreaId == sujectAreaId);
+            return await _appDbContext.Videos.Where(vid => vid.SubjectAreaId == sujectAreaId).ToListAsync();
         }
     }
 }
