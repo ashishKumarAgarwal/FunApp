@@ -1,23 +1,53 @@
-﻿@inherits ProjectDetailsBase
+﻿@using FunApp.Common.Models
+@using FunApp.Services
+@inject IVideoService VideoService
 <h3 class="container-fluid bg-4">Videos</h3>
-<div class="container-fluid bg-2">
 
-    @{
-                    @*@foreach (var video in _projectDetail.VideoList.VideoNameWithLink)
-                    {
-        <table class="table" cellpadding="10">
-            <thead>
+@{
+    if(SubjectAreaVideos==null)
+    {
+
+    }
+    else
+    {
+        <div class="container-fluid bg-2">
+            <table class="table" cellpadding="10">
+                <thead>
                 <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>></th>
+                </tr>
+                </thead>
+                <tbody>
 
-                    <th><iframe width="300" height="200" src="@video.Value" allowfullscreen style="border:none;"></iframe><br />@video.Key</th>
-                    <th>
-                        <textarea id="" name="" rows="2" cols="35">Comment..</textarea>
-                        <br><br>
-                        <input type="submit" value="Submit">
-                    </th>
-
-                </tr></thead></table>
-                }*@
+                @foreach (var video in SubjectAreaVideos)
+                {
+                    <tr>
+                        <td>@video.Name</td>
+                        <td>@video.Type</td>
+                        <td><iframe width="300" height="200" src="@video.Value" allowfullscreen style="border:none;"></iframe></td>
+                    </tr>
                 }
-    </div>
 
+                <tr></tr>
+                </tbody>
+            </table>
+        </div>
+    }
+}
+
+@code
+{
+
+    [Parameter]
+    public int SubjectAreaId { get; set; }
+
+    IEnumerable<Video> SubjectAreaVideos { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        SubjectAreaVideos = await VideoService.GetVideosBySubjectArea(SubjectAreaId);
+    }
+
+}

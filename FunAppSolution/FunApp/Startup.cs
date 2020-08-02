@@ -31,6 +31,12 @@ namespace FunApp
             services.AddHttpClient<IRetrospectionService, RetrospectionService>(client =>
                 client.BaseAddress = new Uri("https://localhost:44342/")
             );
+            services.AddHttpClient<IDocumentService, DocumentService>(client =>
+                client.BaseAddress = new Uri("https://localhost:44342/")
+            );
+            services.AddHttpClient<IVideoService, VideoService>(client =>
+                client.BaseAddress = new Uri("https://localhost:44342/")
+            );
             services.AddAuthentication("Identity.Application")
                 .AddCookie();
             services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);

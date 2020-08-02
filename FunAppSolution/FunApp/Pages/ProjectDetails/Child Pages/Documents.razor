@@ -1,22 +1,52 @@
-﻿@inherits ProjectDetailsBase
-<h3 class="container-fluid bg-4">Document links</h3>
+﻿@using FunApp.Common.Models
+@using FunApp.Services
+@inject IDocumentService DocumentService
+<h3 class="container-fluid bg-4">Documents</h3>
 
-<div class="container-fluid bg-2">
-    <table class="table" cellpadding="10">
-        <tr>
-            <th>Document Name</th>
-            <th>Document Link</th>
-        </tr>
+@{
+    if (SubjectAreaDocuments == null)
+    {
 
-        @{
-            @*@foreach (var doc in _projectDetail.DocumentList.DocumentNameWithLink)
-            {
+    }
+    else
+    {
+        <div class="container-fluid bg-2">
+            <table class="table" cellpadding="10">
+                <thead>
                 <tr>
-                    <td>@doc.Key</td>
-                    <td><a href="@doc.Value">link</a></td>
+                    <th>Name</th>
+                    <th>Type</th>
                 </tr>
-            }*@
-        }
-    </table>
-    </div>
+                </thead>
+                <tbody>
 
+                @foreach (var document in SubjectAreaDocuments)
+                {
+                    <tr>
+                        <td><a href="@document.Value">@document.Name</a></td>
+                        <td>@document.Type</td>
+                    </tr>
+                }
+
+                <tr></tr>
+                </tbody>
+            </table>
+        </div>
+    }
+}
+
+@code
+{
+
+    [Parameter]
+    public int SubjectAreaId { get; set; }
+
+    IEnumerable<Document> SubjectAreaDocuments { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        SubjectAreaDocuments = await DocumentService.GetDocumentsBySubjectArea(SubjectAreaId);
+          
+    }
+
+}
