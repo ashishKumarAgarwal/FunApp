@@ -234,7 +234,7 @@ app {
     }
 
     .bg-4 {
-        background-color:#d6d5d5; /* Black Gray */
+        background-color: midnightblue; /* Black Gray */
         color: #fff;
     }
     .bg-5 {
@@ -245,5 +245,13 @@ app {
     .container-fluid {
         padding-top: 70px;
         padding-bottom: 70px;
+    }
+    .container-header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .parentTab {
+        width: 170px;
     }
 }
