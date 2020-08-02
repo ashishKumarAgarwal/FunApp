@@ -6,11 +6,9 @@ namespace FunApp.Common.Models
     {
         [Key]
         public int RetrospectionId { get; set; }
-        public int MemberId { get; set; }
         public string Wentwell { get; set; }
         public string AreaOfImprovement { get; set; }
         public string HappinessIndex { get; set; }
         public int TeamMemberId { get; set; }
-        public TeamMember TeamMember { get; set; }
     }
 }

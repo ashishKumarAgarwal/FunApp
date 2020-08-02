@@ -19,7 +19,7 @@ namespace FunApp.Pages.Retrospection
         protected override async Task OnInitializedAsync()
         {
             var allRetrospections = await RetrospectionService.GetRetrospection();
-            var retrospection = allRetrospections.FirstOrDefault(retro => retro.MemberId == MemberId);
+            var retrospection = allRetrospections.FirstOrDefault(retro => retro.TeamMemberId == MemberId);
             Retrospection = retrospection??new Common.Models.Retrospection();
         }
 
