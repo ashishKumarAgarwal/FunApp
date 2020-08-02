@@ -7,19 +7,26 @@
 
 <h4>Project Details </h4>
 <br>
+@{
+    if (SubjectAreas == null)
+    {
 
-
-<TabControl>
-    <ChildContent>
-        @{ @foreach (var subjectArea in SubjectAreas)
-            {
-                <TabPage Text="@subjectArea.Name.ToString()">
-                    <ProjectDetailsTypes SubjectAreaId="@subjectArea.SubjectAreaId" />
-                </TabPage>
-            }
-        }
-    </ChildContent>
-</TabControl>
+    }
+    else
+    {
+        <TabControl>
+            <ChildContent>
+                @{ @foreach (var subjectArea in SubjectAreas)
+                   {
+                       <TabPage Text="@subjectArea.Name.ToString()">
+                           <ProjectDetailsTypes SubjectAreaId="@subjectArea.SubjectAreaId" />
+                       </TabPage>
+                   }
+                }
+            </ChildContent>
+        </TabControl>
+    }
+}
 
 @code
 {
