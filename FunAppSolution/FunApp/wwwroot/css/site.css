@@ -234,11 +234,11 @@ app {
     }
 
     .bg-4 {
-        background-color: #2f2f2f; /* Black Gray */
+        background-color:#d6d5d5; /* Black Gray */
         color: #fff;
     }
     .bg-5 {
-        background-color: antiquewhite; /* Black Gray */
+        background-color: beige; /* Black Gray */
         color: #fff;
     }
 

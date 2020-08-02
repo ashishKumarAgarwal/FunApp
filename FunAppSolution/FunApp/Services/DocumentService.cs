@@ -9,7 +9,7 @@ namespace FunApp.Services
     public class DocumentService : IDocumentService
     {
         private readonly HttpClient _httpClient;
-        private const string BaseApi = "api/documents";
+        private const string BaseApi = "api/document";
 
         public DocumentService(HttpClient httpClient)
         {

@@ -10,8 +10,8 @@
     }
     else
     {
-        <div class="container-fluid bg-2">
-            <table class="table" cellpadding="10">
+        <div class="container-fluid bg-5">
+            <table class="table table-borderless" cellpadding="10">
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -23,7 +23,7 @@
                 @foreach (var document in SubjectAreaDocuments)
                 {
                     <tr>
-                        <td><a href="@document.Value">@document.Name</a></td>
+                        <td><a href="@document.Value" target="popup">@document.Name</a></td>
                         <td>@document.Type</td>
                     </tr>
                 }
