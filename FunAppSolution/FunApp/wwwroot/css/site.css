@@ -206,7 +206,6 @@ app {
     body {
         font: 20px Montserrat, sans-serif;
         line-height: 1.8;
-        
     }
 
     p {
@@ -229,7 +228,6 @@ app {
 
     .bg-3 {
         background-color: #ffffff;
-      
         color: #555555;
     }
 
@@ -237,6 +235,7 @@ app {
         background-color: midnightblue; /* Black Gray */
         color: #fff;
     }
+
     .bg-5 {
         background-color: beige; /* Black Gray */
         color: #fff;
@@ -246,12 +245,18 @@ app {
         padding-top: 70px;
         padding-bottom: 70px;
     }
+
     .container-header {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    
+
     .parentTab {
         width: 170px;
+    }
+
+    .tileImage {
+        width: 100%;
+        height: 400px;
     }
 }

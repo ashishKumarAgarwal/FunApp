@@ -5,7 +5,7 @@
 @inherits ProjectDetailsBase
 @inject ISubjectAreaService SubjectAreaService
 
-<h4 style="font-weight: bold;text-align: center">Project Details </h4>
+<h4 style="font-weight: bold;text-align: center">Project Areas </h4>
 <br>
 @{
     if (SubjectAreas == null)
@@ -17,11 +17,11 @@
         <TabControl>
             <ChildContent>
                 @{ @foreach (var subjectArea in SubjectAreas)
-                   {
-                       <TabPage Text="@subjectArea.Name.ToString()" IsParent="@true">
-                           <ProjectDetailsTypes SubjectAreaId="@subjectArea.SubjectAreaId" />
-                       </TabPage>
-                   }
+                    {
+                        <TabPage Text="@subjectArea.Name.ToString()" IsParent="@true">
+                            <ProjectDetailsTypes SubjectAreaId="@subjectArea.SubjectAreaId" />
+                        </TabPage>
+                    }
                 }
             </ChildContent>
         </TabControl>
@@ -30,8 +30,6 @@
 
 @code
 {
-
-
 
     IEnumerable<SubjectArea> SubjectAreas { get; set; }
 

@@ -1,0 +1,93 @@
+﻿@page "/onboarding"
+
+<AuthorizeView>
+    <Authorized>
+        <div>
+            <div>
+                <img class="tileImage" src="https://www.talentlms.com/blog/wp-content/uploads/2015/11/successful-employee-onboarding-strategies.jpg" />
+            </div>
+            <div>
+
+                <div class="container-fluid bg-1">
+                    <h3 class="margin text-center">Required approvals</h3><br>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Contact person</th>
+                                <th>Link</th>
+                                <th>Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Admin rights</td>
+                                <td>Admin team</td>
+                                <td>
+                                    <a href="https://jira.csgicorp.com/browse/GDES-881" target="popup">Link</a>
+                                </td>
+                                <td></td>
+                                <td>Gives a user admin rights</td>
+                            </tr>
+                            <tr>
+                                <td>MSDN Licence</td>
+                                <td>MSDN team</td>
+                                <td>https://jira.csgicorp.com/browse/SR-181170</td>
+                                <td>Gives a user MSDN license</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container-fluid bg-2">
+                    <h3 class="margin text-center">Things to set up</h3><br>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Software required</th>
+                                <th>Link</th>
+                                <th>Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Local Environment</td>
+                                <td>Visual studio</td>
+                                <td>
+                                    <a href="https://jira.csgicorp.com/browse/SR-181170" target="popup">Link</a>
+                                </td>
+                                <td>To code</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container-fluid bg-5">
+                    <h3 class="margin text-center">Required trainings</h3><br>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Related Area</th>
+                                <th>Priority</th>
+                                <th>Link</th>
+                                <th>Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>In house</td>
+                                <td>Attunity</td>
+                                <td>High</td>
+                                <td> <a href="https://jira.csgicorp.com/browse/SR-181170" target="popup">Link</a></td>
+                                <td>Attunity helps to replicate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <p> Not authorized</p>
+    </NotAuthorized>
+</AuthorizeView>

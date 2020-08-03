@@ -45,9 +45,9 @@ namespace FunApp.WebApI.Repositories
             return await _appDbContext.Retrospection.ToListAsync();
         }
 
-        public async Task<Retrospection> GetRetrospection(int teamMemberId)
+        public async Task<Retrospection> GetRetrospection(int retrospectionId)
         {
-            return await _appDbContext.Retrospection.FirstOrDefaultAsync(tm => tm.TeamMemberId == teamMemberId);
+            return await _appDbContext.Retrospection.FirstOrDefaultAsync(tm => tm.RetrospectionId == retrospectionId);
         }
     }
 }
