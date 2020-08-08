@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
-using FunApp.Common.Models;
+﻿using FunApp.Common.Models;
 using FunApp.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
+using System.Threading.Tasks;
 
 namespace FunApp.Pages.MemberCreateEdit
 {
@@ -42,8 +42,7 @@ namespace FunApp.Pages.MemberCreateEdit
 
         protected async Task HandleValidSubmit()
         {
-            TeamMember result = null;
-
+            TeamMember result;
             if (TeamMember.TeamMemberId != 0)
             {
                 result = await TeamMemberService.UpdateTeamMember(TeamMember);

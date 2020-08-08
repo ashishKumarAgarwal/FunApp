@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using Microsoft.AspNetCore.Identity;
 
 namespace FunApp
 {
@@ -22,28 +23,33 @@ namespace FunApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            var baseUri = "https://localhost:44342/";
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            RegisterFunAppServices(services, baseUri);
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<FunAppContext>();
+            services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);
+        }
+        private static void RegisterFunAppServices(IServiceCollection services, string baseUri)
+        {
             services.AddHttpClient<ITeamMemberService, TeamMemberService>(client =>
-                client.BaseAddress = new Uri("https://localhost:44342/")
+                client.BaseAddress = new Uri(baseUri)
             );
             services.AddHttpClient<IRetrospectionService, RetrospectionService>(client =>
-                client.BaseAddress = new Uri("https://localhost:44342/")
+                client.BaseAddress = new Uri(baseUri)
             );
             services.AddHttpClient<IDocumentService, DocumentService>(client =>
-                client.BaseAddress = new Uri("https://localhost:44342/")
+                client.BaseAddress = new Uri(baseUri)
             );
             services.AddHttpClient<IVideoService, VideoService>(client =>
-                client.BaseAddress = new Uri("https://localhost:44342/")
+                client.BaseAddress = new Uri(baseUri)
             );
             services.AddHttpClient<ISubjectAreaService, SubjectAreaService>(client =>
-                client.BaseAddress = new Uri("https://localhost:44342/")
+                client.BaseAddress = new Uri(baseUri)
             );
-            services.AddAuthentication("Identity.Application")
-                .AddCookie();
-            services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);
-            // services.AddTransient<ITeamMemberService, TeamMemberService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +62,6 @@ namespace FunApp
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

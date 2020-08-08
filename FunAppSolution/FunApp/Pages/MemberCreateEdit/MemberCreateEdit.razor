@@ -1,9 +1,8 @@
 ﻿@page "/membercreateedit/{id}"
 @page "/membercreateedit"
-@attribute [Authorize]
+@attribute [Authorize(Roles = "Admin")]
 
 @inherits MemberCreateEditBase
-
 
 <h4 style="font-weight: bold;text-align: center">@PageHeaderText</h4>
 
@@ -75,12 +74,7 @@
 
     <button class="btn btn-primary" type="submit">Submit</button>
     @{
-//var href = "/";
-//if (TeamMember.TeamMemberId != 0)
-//{
-//    href=$"/memberdetail/{@TeamMember.TeamMemberId}";
-
-//}
+        
         <a href="/" class="btn btn-primary">Cancel</a>
     }
 </EditForm>

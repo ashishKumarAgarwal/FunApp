@@ -8,7 +8,7 @@
     }
     else
     {
-<h4 style="font-weight: bold;text-align: center">My Team Members </h4>
+        <h4 style="font-weight: bold;text-align: center">My Team Members </h4>
 
         <table class="table">
             <thead>
@@ -32,11 +32,13 @@
                                 Details
                             </a>
                         </td>
-                        <td>
-                            <a href="@($"membercreateedit/{member.TeamMemberId}")" class="btn btn-primary table-btn">
-                                Edit
-                            </a>
-                        </td>
+                        <AuthorizeView Roles="Admin">
+                            <td>
+                                <a href="@($"membercreateedit/{member.TeamMemberId}")" class="btn btn-primary table-btn">
+                                    Edit
+                                </a>
+                            </td>
+                        </AuthorizeView>
                     </tr>
                 }
             </tbody>
